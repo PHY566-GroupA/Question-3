@@ -1,3 +1,4 @@
+# calcultaing the molecule density
 if z == 5000: 
         for i in range (0,x):
             count_1=0
@@ -10,3 +11,23 @@ if z == 5000:
             density_1.append(count_1/float(y))
             density_2.append(count_2/float(y))
         print a
+        
+# grid plot of gas molecules
+x_1=[]
+y_1=[]
+x_2=[]
+y_2=[]
+for i in range(0,x):
+    for j in range(0,y):
+        if a[i,j] == 1:
+            x_1.append(i)
+            y_1.append(j)
+        if a[i,j] == 2:
+            x_2.append(i)
+            y_2.append(j)
+
+pyplot.plot(x_1,y_1,'or')
+pyplot.plot(x_2,y_2,'*b')
+pyplot.xlim(-2,6)
+pyplot.ylim(-2,6)
+pyplot.show()
