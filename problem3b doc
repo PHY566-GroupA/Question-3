@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage{graphicx, enumitem}
+
+\begin{document}
+
+\title{PHY566 Group Project 1 - Version B }
+\author{Ankur Manikandan and Aritro Pathak}
+
+\maketitle
+
+\begin{abstract}
+A random walk is a mathematical formalization of a path that consists of a succession of random steps. The term random walk was first introduced by Karl Pearson in 1905.  Random walks have been used in many fields: ecology, economics, psychology, computer science, physics, chemistry, and biology.  Random walks explain the observed behaviors of many processes in these fields, and thus serve as a fundamental model for the recorded stochastic activity. 
+
+One of the main applications of randolm walk is to trace the path of a molecule as it travels in a liquid or gas. These molecules are constantly buffeted by the molecules around them, a consequence of the molecular nature of matter. They exhibit random walks, where each "step" is in a random direction relative to the one that preceeded it.
+
+The type of motion that describes such random motion of particles is known as, Brownian motion. Brownian motion is among the simplest of the continuous-time stochastic (or probabilistic) processes, and it is a limit of both simpler and more complicated stochastic processes. 
+\end{abstract}
+
+\section{Introduction}
+In the Group Assignment 1, we are asked to use random walks to simulate the mixing of two gases in 2D in a rectangular enclosure. Also, we are asked to understand the variation of linear population densities with select time-intervals. The questions posed in the assignment are as follows - 
+
+\subsection{Mixing of two Gases}
+Use the techniques and insights gained previously to write a program to simulate the mixing of two gases in 2D in a rectangular enclosure:
+
+\begin{enumerate}[label=(\alph*)]
+
+\item Set up a 2D grid in xy space with dimensions 600 x 400. Fully populate the left third of the grid with a gas of species ”A” and the right third of the grid with a gas of species ”B”. The center third of the grid remains empty. Pick a random location on the grid, and have the gas particle move at random one position up/down/left/right. If the selected position is occupied, reject the move and pick another particle (you may optimize the algorithm by only picking from occupied sites). Repeat for a large number of iterations. 
+
+\item Plot the linear population densities $n_A (x)$ and $n_B (x)$ after select time-intervals. Also plot a few sample configurations of the grid at various time-steps.
+
+\item Average the densities over 100 trials for added accuracy and replot the densities.
+
+\end{enumerate}
+
+\section{Methods}
+\subsection{Mixing of two gases}
+We generated a grid of size 600 x 400 by populating the left third of the grid with gas species "A" and the right third with a gas species "B", leaving the centre of the grid empty. To pick a random location, that is an occupied site, on the grid we used the "random" function from the 'random' library. 
+
+We considered three different cases to move the randomly selected particle:
+
+\begin{itemize}
+
+\item $Case 1$ - If the particle is at the four corners of the grid, then it has only two degrees of freedom.
+
+\item $Case 2$ - If the particle is along the border of the grid, excluding the edges, then it has three degrees of freedom.
+
+\item $Case 3$ - If the particle is situated within the interior of the gird, then it has all four degree of freedom. 
+
+\end{itemize}
+
+In each case, the particle has an equal probability of moving in it's permissible directions. The random motion of the particles is repeated over a large number of iterations.
+
+Also, the question asked us to plot the linear population densities after select time-intervals. The population densities are calculated by counting the number of gas molecules of types "A" and "B" independently along the x-axis.
+
+For the last part of the question, we average the densities over 100 trials using a "for" loop and replot the densities at various time-steps.
+
+\section{Results}
+\subsection{Mixing of two gases}
+
+\section{Conslusion}
+
+\end{document}
